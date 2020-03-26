@@ -1,0 +1,16 @@
+<%- include('parts/head',{title:'Pizzaria Fantástica'}); %>
+	<form>
+		<input type="text" name="busca" placeholder="Qual pizza você procura?" autocomplete="off">
+		<button type="submit">Buscar</button>
+	</form>
+	<main>
+		<% for(let pizza of pizzas){ %>
+		<article>
+			<img src="<%= pizza.img %>" alt="<%= pizza.nome %>">
+			<button>+ Add</button>
+			<div><%= pizza.nome %></div>
+			<span><%= pizza.preco.toLocaleString('pt-br', { minimumFractionDigits: 2 , style: 'currency', currency: 'BRL' }) %></span>
+		</article>
+		<% } %>
+	</main>
+	<%- include('parts/head',{title:'Pizzaria Fantástica'}); %>

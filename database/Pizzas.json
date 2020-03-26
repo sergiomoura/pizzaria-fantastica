@@ -1,0 +1,122 @@
+[
+	{
+		"id":1,
+		"nome":"Calabresa",
+		"ingredientes":["mussarela", "calabresa", "cebola"],
+		"preco":38.5,
+		"img":"/img/calabresa.jpg",
+		"destaque": true
+	},
+	{
+		"id":2,
+		"nome":"Pepperoni",
+		"ingredientes":["mussarela", "pepperoni", "cebola"],
+		"preco":48.55,
+		"img":"/img/pepperoni.jpg",
+		"destaque": false
+	},
+	{
+		"id":3,
+		"nome":"Fracatu",
+		"ingredientes":["mussarela", "frango", "catupiry", "cebola"],
+		"preco":38.5,
+		"img":"/img/fracatu.jpg",
+		"destaque": true
+	},
+	{
+		"id":4,
+		"nome":"Marguerita",
+		"ingredientes":["mussarela", "tomate", "manjericão"],
+		"preco":33.5,
+		"img":"/img/marguerita.jpg",
+		"destaque": false
+	},
+	{
+		"id":5,
+		"nome":"Quatro Queijos",
+		"ingredientes":["mussarela", "gorgonzola", "provolone", "parmesão"],
+		"preco":38.5,
+		"img":"/img/quatroqueijos.jpg",
+		"destaque": true
+	},
+	{
+		"id":6,
+		"nome":"Portuguesa",
+		"ingredientes":["cebola", "pimentão", "ovo", "mussarela", "presunto"],
+		"preco":40.5,
+		"img":"/img/quatroqueijos.jpg",
+		"destaque": true
+	},
+	{
+		"id":7,
+		"nome":"Quatro Queijos",
+		"ingredientes":["mussarela", "gorgonzola", "provolone", "parmesão"],
+		"preco":38.5,
+		"img":"/img/quatroqueijos.jpg",
+		"destaque": true
+	},
+	{
+		"id":8,
+		"nome":"Caipira",
+		"ingredientes":["mussarela", "milho verde", "frango"],
+		"preco":38.5,
+		"img":"/img/quatroqueijos.jpg",
+		"destaque": true
+	},
+	{
+		"id":9,
+		"nome":"Napolitana",
+		"ingredientes":["mussarela", "gorgonzola", "provolone", "parmesão"],
+		"preco":55.5,
+		"img":"/img/quatroqueijos.jpg",
+		"destaque": true
+	},
+	{
+		"id":10,
+		"nome":"Baiana",
+		"ingredientes":["mussarela", "gorgonzola", "provolone", "parmesão"],
+		"preco":38.5,
+		"img":"/img/quatroqueijos.jpg",
+		"destaque": true
+	},
+	{
+		"id":11,
+		"nome":"Meat & Bacon",
+		"ingredientes":["mussarela", "calabresa", "bacon"],
+		"preco":38.5,
+		"img":"/img/quatroqueijos.jpg",
+		"destaque": true
+	},
+	{
+		"id":12,
+		"nome":"Rúcula",
+		"ingredientes":["mussarela", "rúcula", "tomate seco"],
+		"preco":38.5,
+		"img":"/img/quatroqueijos.jpg",
+		"destaque": true
+	},
+	{
+		"id":5,
+		"nome":"Quatro Queijos",
+		"ingredientes":["mussarela", "gorgonzola", "provolone", "parmesão"],
+		"preco":38.5,
+		"img":"/img/quatroqueijos.jpg",
+		"destaque": true
+	},
+	{
+		"id":5,
+		"nome":"Quatro Queijos",
+		"ingredientes":["mussarela", "gorgonzola", "provolone", "parmesão"],
+		"preco":38.5,
+		"img":"/img/quatroqueijos.jpg",
+		"destaque": true
+	},
+	{
+		"id":5,
+		"nome":"Quatro Queijos",
+		"ingredientes":["mussarela", "gorgonzola", "provolone", "parmesão"],
+		"preco":38.5,
+		"img":"/img/quatroqueijos.jpg",
+		"destaque": true
+	}
+]
