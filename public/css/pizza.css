@@ -1,0 +1,97 @@
+main {
+	width: 60%;
+	margin: 30px auto;
+	position: relative;
+}
+
+main h1 {
+	position: absolute;
+	right: 0;
+	top:50;
+	color: #FFF;
+	background-color: rgb(255, 81, 0);
+	padding: 10px 20px;
+	margin: 0;
+}
+
+main h2 {
+	position: absolute;
+	right: 0;
+	top:55px;
+	color: #FFF;
+	background-color: #000;
+	padding: 5px 5px;
+	margin: 0;
+}
+
+main img{
+	width: 100%;
+	height: 300px;
+	object-fit: cover;
+	display: block;
+}
+
+main button{
+	display: block;
+	background-color: rgb(255, 81, 0);
+	border: none;
+	color: white;
+	padding: 10px 20px;
+	font-size: 1.5rem;
+	cursor: pointer;
+	opacity: 1;
+	transition: opacity 0.2s linear;
+	width: 100%;
+}
+
+main button:focus{
+	outline: 3px solid rgb(255, 81, 0);	
+}
+
+main article:hover button{
+	opacity: 0.8;
+}
+
+
+main article:hover button:hover{
+	opacity: 1;
+}
+
+main div {
+	color: #FFF;
+	background-color: #000;
+	padding: 20px;
+	margin: 0;
+	font-size: 1.5rem;
+}
+
+main a{
+	background-color: rgb(45, 129, 255);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+	font-size: 2rem;
+	font-weight: bold;
+	color: #FFF;
+	position: absolute;
+	width: 42px;
+	height: 42px;
+	line-height: 42px;
+	top: 130px;
+}
+
+main a.prev{
+	left: -21px;
+}
+
+main a.next{
+	right: -21px;
+}
+
+@media(max-width:600px){
+	main {
+		width: 80%;
+		min-width: 360px;
+	}
+}
