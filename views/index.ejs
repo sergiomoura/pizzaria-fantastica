@@ -7,10 +7,11 @@
 		<% for(let pizza of pizzas){ %>
 		<article>
 			<img src="<%= pizza.img %>" alt="<%= pizza.nome %>">
+			<a href="/pizzas/<%= pizza.id %>">Ver Mais</a>
 			<button>+ Add</button>
 			<div><%= pizza.nome %></div>
 			<span><%= pizza.preco.toLocaleString('pt-br', { minimumFractionDigits: 2 , style: 'currency', currency: 'BRL' }) %></span>
 		</article>
 		<% } %>
 	</main>
-	<%- include('parts/head',{title:'Pizzaria Fantástica'}); %>
+	<%- include('parts/foot'); %>
