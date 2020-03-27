@@ -168,3 +168,13 @@ main article:hover a:hover{
 	} 
 
 }
+
+.pizza-nao-encontrada{
+	background-color: black;
+	color: #FFF;
+	width: 320px;
+	margin: 120px auto;
+	padding: 20px;
+	font-size: 1.5rem;
+	text-align: center;
+}

@@ -2,7 +2,7 @@ const pizzas = require('../database/Pizzas.json');
 
 module.exports = {
 	index: (req, res)=>{
-		res.render("index",{pizzas});
+		res.render("index",{pizzas,busca:""});
 	},
 	show: (req, res) => {
 
@@ -31,6 +31,15 @@ module.exports = {
 			res.render("pizza",{pizza, idNext, idPrev});
 		} else {
 			res.render("erros/pizzaNaoEncontrada",{id:req.params.id});
+		}
+	},
+	search: (req,res) => {
+		let busca = req.query.q;
+		if(busca){
+			let result = pizzas.filter( p => p.nome.toUpperCase().includes(busca.toUpperCase()) );
+			return res.render('index', {pizzas: result, busca});
+		} else {
+			return res.redirect('/');
 		}
 	}
 }

@@ -5,6 +5,7 @@ const PizzasController = require('../controllers/PizzasController');
 
 /* GET home page. */
 router.get('/', PizzasController.index);
+router.get('/busca',PizzasController.search);
 router.get('/pizzas/:id',PizzasController.show);
 
 
