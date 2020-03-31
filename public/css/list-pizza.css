@@ -57,6 +57,20 @@
 	padding: 10px 20px;
 }
 
-#list-pizza table a:hover{
+#list-pizza>a{
+	font-size: 1rem;
+	display: block;
+	width: 300px;
+	text-align: center;
+	text-decoration: none;
+	background-color: rgba(255, 81, 0, 0.8);
+	color: white;
+	border: none;
+	padding: 10px 20px;
+	margin-bottom: 10px;
+	float: right;
+}
+
+#list-pizza a:hover{
 	background-color: rgba(255, 81, 0, 1);
 }
