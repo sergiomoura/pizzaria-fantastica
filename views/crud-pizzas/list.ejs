@@ -1,0 +1,22 @@
+<%- include('../parts/head',{title:'Pizzaria Fantástica'}); %>
+<link rel="stylesheet" href="/css/list-pizza.css">
+<div id="list-pizza">
+	<table>
+		<tbody>
+		<% for(let pizza of pizzas ) { %>
+		<tr>
+			<td>
+				<img src="<%= pizza.img %>" alt="<%= pizza.nome %>"></td>
+			<td><%= pizza.nome %></td>
+			<td><%= pizza.preco.toLocaleString('pt-br', { minimumFractionDigits: 2 , style: 'currency', currency: 'BRL' }) %></td>
+			<td><%= pizza.ingredientes.join(", ") %></td>
+			<td>
+				<button>Remover</button>
+				<a href="#">Editar</button>
+			</td>
+		</tr>
+		<% } %>
+		</tbody>
+	</table>
+</div>
+<%- include('../parts/foot'); %>

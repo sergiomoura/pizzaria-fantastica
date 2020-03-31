@@ -41,5 +41,22 @@ module.exports = {
 		} else {
 			return res.redirect('/');
 		}
+	},
+	edit: (req, res) =>{
+		// Carregar a pizza de id passado pela rota
+		let pizza = pizzas.find(
+			(pizza) => {
+				return pizza.id == req.params.id;
+			}
+		)
+
+		// Enviar view edit-pizza passando para ela a pizza carregada
+		return res.render("crud-pizzas/edit",{pizza});
+	},
+	create: (req,res) => {
+		return res.render("crud-pizzas/create");
+	},
+	list: (req,res) => {
+		return res.render("crud-pizzas/list",{pizzas});
 	}
 }

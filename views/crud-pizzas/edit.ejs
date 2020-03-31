@@ -1,0 +1,28 @@
+<%- include('../parts/head',{title:'Pizzaria Fantástica - Editando Pizza'}); %>
+<link rel="stylesheet" href="/css/form-pizza.css">
+<form id="form-pizza" action="">
+	<label>
+		Nome:
+		<input type="text" name="nome" id="nome" value="<%= pizza.nome %>" placeholder="Digite o nome da pizza">
+	</label>
+
+	<label>
+		Ingredientes:
+		<input type="text" name="ingredientes"  value="<%= pizza.ingredientes.join(', ') %>" id="ingredientes" placeholder="Ingredientes (separados por vírgula)">
+	</label>
+
+	<label>
+		Preço:
+		<input type="number" name="preco" id="preco"  value="<%= pizza.preco %>" step="0.01" placeholder="Digite o preço da pizza">
+	</label>
+
+	<label>
+		Foto:
+		<img src="<%= pizza.img %>" alt="<%= pizza.nome %>">
+		<div>Clique para selecione nova imagem</div>
+		<input type="file" name="img" id="img">
+	</label>
+
+	<button type="submit">Salvar</button>
+</form>
+<%- include('../parts/foot'); %>

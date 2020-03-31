@@ -1,0 +1,62 @@
+#list-pizza{
+	width: 960px;
+	margin: 5vh auto;
+	padding: 50px;
+	background-color: rgba(0,0,0,0.5);
+	color: #FFF;
+}
+
+#list-pizza table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+#list-pizza table img {
+	width: 100px;
+	height: 100px;
+	object-fit: cover;
+	display: block;
+}
+
+#list-pizza table td{
+	text-align: center;
+	width: 100px;
+	border: 1px solid rgba(255,255,255,0.5);
+}
+
+#list-pizza table tr td:first-child{
+	width: 10%;
+	padding: 5px;
+}
+
+#list-pizza table tr:hover td{
+	background-color: rgba(255,255,255,0.2);
+}
+
+#list-pizza table button{
+	font-size: 1rem;
+	background-color: rgba(255, 0, 0,0.3);
+	color: white;
+	border: none;
+	font-size: 0.8rem;
+	cursor: pointer;
+}
+
+#list-pizza table button:hover{
+	background-color: rgba(255, 0, 0,0.8);
+}
+
+#list-pizza table a{
+	font-size: 1rem;
+	display: inline-block;
+	text-align: center;
+	text-decoration: none;
+	background-color: rgba(255, 81, 0, 0.8);
+	color: white;
+	border: none;
+	padding: 10px 20px;
+}
+
+#list-pizza table a:hover{
+	background-color: rgba(255, 81, 0, 1);
+}
