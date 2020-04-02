@@ -1,22 +1,26 @@
 <%- include('../parts/head',{title:'Pizzaria Fantástica'}); %>
 <link rel="stylesheet" href="/css/list-pizza.css">
 <div id="list-pizza">
-	<a href="#">Adicionar nova pizza</a>
+	<a href="/pizzas/create">Adicionar nova pizza</a>
 	<table>
 		<tbody>
-		<% for(let pizza of pizzas ) { %>
-		<tr>
-			<td>
-				<img src="<%= pizza.img %>" alt="<%= pizza.nome %>"></td>
-			<td><%= pizza.nome %></td>
-			<td><%= pizza.preco.toLocaleString('pt-br', { minimumFractionDigits: 2 , style: 'currency', currency: 'BRL' }) %></td>
-			<td><%= pizza.ingredientes.join(", ") %></td>
-			<td>
-				<button>Remover</button>
-				<a href="#">Editar</button>
-			</td>
-		</tr>
-		<% } %>
+			<% for(let pizza of pizzas ) { %>
+			<tr>
+				<td>
+					<img src="<%= pizza.img %>" alt="<%= pizza.nome %>"></td>
+				<td><%= pizza.nome %></td>
+				<td>
+					<%= pizza.preco.toLocaleString('pt-br', { minimumFractionDigits: 2 , style: 'currency', currency: 'BRL' }) %>
+				</td>
+				<td><%= pizza.ingredientes.join(", ") %></td>
+				<td>
+					<form method="POST" action="/pizzas/<%= pizza.id %>?_method=DELETE">
+						<button type="submit">Remover</button>
+					</form>
+					<a href="/pizzas/<%= pizza.id %>/edit">Editar</button>
+				</td>
+			</tr>
+			<% } %>
 		</tbody>
 	</table>
 </div>
