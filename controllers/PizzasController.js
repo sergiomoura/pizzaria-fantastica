@@ -71,10 +71,11 @@ module.exports = {
 		)
 
 		// Tratar o upload do arquivo
+		let img = `/img/${req.file.originalname}`;
 
 		// Criar um objeto literal representando uma pizza com as informações enviadas
 		let id = pizzas[pizzas.length - 1].id + 1;
-		const pizza = { id, nome, ingredientes, preco: Number(preco), destaque: false, img: '' }
+		const pizza = { id, nome, ingredientes, preco: Number(preco), destaque: false, img }
 
 		// Adicionar a pizza criada ao array de pizzas
 		pizzas.push(pizza);

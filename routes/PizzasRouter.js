@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
+const upload = require("../lib/upload");
+
 const PizzasController = require('../controllers/PizzasController');
 
 /* GET home page. */
@@ -10,7 +12,7 @@ router.get('/pizzas/:id/edit', PizzasController.edit);
 router.get('/pizzas/create', PizzasController.create);
 router.get('/pizzas/:id', PizzasController.show);
 router.get('/pizzas', PizzasController.list);
-router.post('/pizzas', PizzasController.store);
+router.post('/pizzas', upload.single("img"), PizzasController.store);
 router.put('/pizzas/:id/update', PizzasController.update);
 router.delete('/pizzas/:id', PizzasController.delete);
 

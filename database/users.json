@@ -1,0 +1,27 @@
+[
+    {
+        "nome": "Adler",
+        "email": "dhadler@dh.com",
+        "senha": "adler"
+    },
+    {
+        "nome": "Davi",
+        "email": "dhdavi@dh.com",
+        "senha": "davi"
+    },
+    {
+        "nome": "Ernesto Rubens",
+        "email": "dhernesto@dh.com",
+        "senha": "ernesto"
+    },
+    {
+        "nome": "Sergio",
+        "email": "dhsergio@dh.com",
+        "senha": "sergiodh"
+    },
+    {
+        "nome": "Gabriel",
+        "email": "dhgabriel@dh.com",
+        "senha": "gabrieldh"
+    }
+]
