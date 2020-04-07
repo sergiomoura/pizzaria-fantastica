@@ -19,5 +19,9 @@ module.exports = {
             return res.render("adm/login", {error:"Login/Senha inválidos"});
         }
 
+    },
+    logout: (req,res) => {
+        req.session.destroy();
+        res.redirect("/adm/login");
     }
 }
