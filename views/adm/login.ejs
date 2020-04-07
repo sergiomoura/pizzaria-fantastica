@@ -18,7 +18,7 @@
             <button type="submit">Entrar</button>
         </div>
     </form>
-    <% if(error) { %>
-        <div><%= error %></div>
-    <% } %>
+    <%if(error) { %>
+        <div class="alert-error"><%= error %></div>
+    <%} %>
 <%- include("../parts/foot") %>

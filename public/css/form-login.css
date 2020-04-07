@@ -1,6 +1,6 @@
 #form-login {
 	width: 480px;
-	margin: 5vh auto;
+	margin: 5vh auto 0 auto;
 	background-color: rgba(0,0,0,0.5);
 	color: #FFF;
 	padding: 50px;
@@ -70,4 +70,13 @@
 
 #form-login .controles button:hover{
 	opacity: 1;
+}
+
+.alert-error{
+	background-color: rgba(100,0,0,0.5);
+	color: #FFF;
+	width: 480px;
+	margin: 20px auto;
+	padding: 20px;
+	text-align: center;
 }
