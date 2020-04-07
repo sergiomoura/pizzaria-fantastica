@@ -9,6 +9,7 @@ html{
 
 body {
 	margin: 0;
+	color: #FFF;
 }
 
 body::before{
@@ -22,3 +23,12 @@ body::before{
 	z-index: -1;
 }
 
+a {
+	color: #E0E0E0;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #E0E0E0;
+	text-decoration: underline;
+}

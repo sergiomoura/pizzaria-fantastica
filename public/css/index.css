@@ -132,6 +132,7 @@ main article:hover a{
 
 main article:hover a:hover{
 	opacity: 1;
+	text-decoration: none;
 }
 
 @media (max-width:1090px){

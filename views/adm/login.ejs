@@ -1,24 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <form id="login" method="POST" action="/adm/login">
+<%- include('../parts/head',{title:'Pizzaria Fantástica - Login'}); %>
+    <link rel="stylesheet" href="/css/form-login.css">
+    <form id="form-login" method="POST" action="/adm/login">
         <div>
-            <label for="email">E-mail</label>
-            <input type="text" name="email" id="email">
+            <label for="email">
+                E-mail
+                <input type="text" name="email" id="email">
+            </label>
         </div>
         <div>
-            <label for="senha">Senha:</label>
-            <input type="password" name="senha" id="senha">
+            <label for="senha">
+                Senha:
+                <input type="password" name="senha" id="senha">
+            </label>
         </div>
-        <button type="submit">Entrar</button>
+        <div class="controles">
+            <a href="/adm/forgot">Esqueci minha senha</a>
+            <button type="submit">Entrar</button>
+        </div>
     </form>
     <% if(error) { %>
         <div><%= error %></div>
     <% } %>
-</body>
-</html>
+<%- include("../parts/foot") %>
