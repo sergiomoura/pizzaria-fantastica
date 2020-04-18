@@ -1,4 +1,4 @@
-const users = require("../database/users.json");
+const users = require("../database/Users.json");
 
 const UsersController = {
     list: (req, res) => {

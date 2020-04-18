@@ -1,4 +1,4 @@
-const users = require("../database/users.json");
+const users = require("../database/Users.json");
 
 module.exports = {
     show:(req,res) => {
