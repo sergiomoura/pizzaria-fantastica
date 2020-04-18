@@ -80,23 +80,3 @@
 #bt-add:hover{
 	text-decoration: none;
 }
-
-
-/* 
-#list-usuarios>a{
-	font-size: 1rem;
-	display: block;
-	width: 300px;
-	text-align: center;
-	text-decoration: none;
-	background-color: rgba(255, 81, 0, 0.8);
-	color: white;
-	border: none;
-	padding: 10px 20px;
-	margin-bottom: 10px;
-	float: right;
-}
-
-#list-usuarios a:hover{
-	background-color: rgba(255, 81, 0, 1);
-} */
