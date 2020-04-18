@@ -8,6 +8,7 @@ var session = require("express-session");
 
 var PizzasRouter = require('./routes/PizzasRouter');
 var AdmRouter = require('./routes/AdmRouter');
+var UsersRouter = require('./routes/UsersRouter');
 
 var app = express();
 
@@ -25,6 +26,7 @@ app.use(methodOveride("_method"));
 
 app.use('/', PizzasRouter);
 app.use('/', AdmRouter);
+app.use('/', UsersRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
