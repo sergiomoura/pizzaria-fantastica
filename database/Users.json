@@ -1,27 +1,32 @@
 [
     {
-        "nome": "Adler",
+        "nome": "Adler Carvalho",
         "email": "dhadler@dh.com",
-        "senha": "adler"
+        "senha": "adler",
+        "img":"/img/usuarios/p1.jpg"
     },
     {
-        "nome": "Davi",
+        "nome": "Davi Araújo Pinho",
         "email": "dhdavi@dh.com",
-        "senha": "davi"
+        "senha": "davi",
+        "img":"/img/usuarios/p2.jpg"
     },
     {
-        "nome": "Ernesto Rubens",
+        "nome": "Ernesto Rubens Souza",
         "email": "dhernesto@dh.com",
-        "senha": "ernesto"
+        "senha": "ernesto",
+        "img":"/img/usuarios/p3.jpg"
     },
     {
-        "nome": "Sergio",
+        "nome": "Sérgio Cortez Garcia",
         "email": "dhsergio@dh.com",
-        "senha": "sergiodh"
+        "senha": "sergiodh",
+        "img":"/img/usuarios/p4.jpg"
     },
     {
-        "nome": "Gabriel",
+        "nome": "Gabriel Andaluz",
         "email": "dhgabriel@dh.com",
-        "senha": "gabrieldh"
+        "senha": "gabrieldh",
+        "img":"/img/usuarios/p5.jpg"
     }
 ]
