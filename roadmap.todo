@@ -1,0 +1,61 @@
+Concluir CRUD de usuários:
+    ✔ Listar usuários @done
+    ✔ Criar rota get que retorne uma view com form para adição de usuário @done
+    ☐ Criar rota post para adicionar um usuário e fazer o seu respectivo controller
+    ☐ Criar rota get que retorne uma view com form para edição de usuário
+    ☐ Criar rota put para alterar as informações de um usuário
+    ☐ Criar rota e controller para remoção de um usuário.
+    ☐ Proteger as rotas do crud de usuários com o middleware VerificaUsuarioLogado
+
+Menu interno:
+    ☐ Fazer com que o menu da área interna apareça nas telas de usuários
+    ☐ Fazer com que o menu interno receba como parâmetro o link selecionado para que ele possa destacar o respectivo
+
+Lista de Pizzas - Página inicial:
+    ☐ Fazer com que, ao clicar no botão add da pizza ela seja adicionada ao carrinho do cliente (req.session.idPizzasa)
+    ☐ Fazer um link na página inicial apontando para get /carrinho
+    ☐ Mostrar no link para a página de carrinho a quantidade de pizzas que o cliente tem no carrinho
+    ☐ Fazer uma view mostrando o que o visitante tem no carrinho
+
+Carrinho:
+    ☐ Mostrar na view de /carrinho:
+        - Os itens do carrinho numa tabela
+        - O valor total da compra
+        - Um link para finalizar a compra (apontando para /checkout)
+        - Um link para o cliente continuar comprando
+    ☐ Fazer com que o cliente possa excluir um item do carrinho
+    ☐ Exibir valor total da compra
+
+Checkout:
+    ☐ Criar uma rota get para "/entrar". Essa rota deve direcionar a req para ClientesController.entrar
+    ☐ ClientesController.entrar deve enviar uma view contendo dois forms:
+        - O de login, que submete um post para "/login" e será encaminhado para ClientesController.login
+        - O de cadastro, que submete um post para "/cadastrar" e será encaminhado para ClientesController.store
+    ☐ ClientesController.store deve
+        - criar cliente
+        - setar session com os dados do cliente (req.session.cliente);
+        - direcionar para a inicial "/",
+    ☐ ClientesController.login deve testar se o cliente existe
+        - Se sim, setar session com os dados do cliente (req.session.cliente) e direcionar para "/"
+        - Se não, redirecionar para "/entrar" com uma mensagem de falha no login
+
+    ☐ Exibir o nome do cliente na página incial, indicando para o visitante que ele está logado
+
+    ☐ Criar uma rota get /checkout. Essa rota deve ter um middleware que verifique se o cliente está logado
+        - Caso esteja logado, utilize o next() para executar a próxima função na cadeia de middlewares
+        - Caso não esteja logado direcionar para a rota "/entrar"
+    ☐ A rota get para "/checkout" direciona req para CheckoutController.show
+    ☐ CheckoutController.show envia uma view que mostra detalhes do pedido do cliente com e exibe um botão para ele confirmar o pedido
+    ☐ O botão submete um form post para "/checkout". A rota post "/checkout" direciona a req para CheckoutController.process
+    ☐ CheckoutController.process deve:
+        - criar um pedido no servidor com status pendente.
+        - limpar a session de pizzasId do usuário (delete req.session.pizzasId);
+        - enviar uma view exibindo uma mensagem de sucesso
+
+Pedidos:
+    ☐ Criar uma rota get "/pedidos" que só pode ser acessada por um usuário logado
+    ☐ A rota direciona para PedidosController.list, que deve carregar os pedidos e retornar uma view que liste os pedidos
+    ☐ Essa view deve permitir que o usuário altere o status do pedido de um pedido de pendente para realizado e vice-versa
+    ☐ Essa view deve receber uma query string para determinar se deve listar epdidos de todos os status, somente pendentes ou somente realizados
+    
+        
