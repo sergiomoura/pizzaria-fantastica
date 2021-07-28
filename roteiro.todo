@@ -1,0 +1,25 @@
+Para fazer com que as pizzas da home apareçam de forma dinâmica:
+    ☐ No PizzasController você deve importar as info das pizzas (Pizzas.json);
+    ☐ Enviar as informações das pizzas pizzas para a view index
+    ☐ Adequar a view index.ejs para exibir as informações passadas pelo controller
+
+Para fazer o link "Ver Mais" funcionar:
+    ☐ Fazer com que o link "ver mais" aponte para a rota /pizzas/_id_da_pizza_
+    ☐ Criar em PizzasRouter uma rota GET para "/pizzas/:id"
+    ☐ Direcionar a requisição que chegue a essa rota para PizzasController.show
+    ☐ Criar o controller PizzasController.show
+        Esse controller deve
+        . Identificar o id da pizza requisitada
+        . Carregar a informação da pizza requisitada
+        . Renderizar a view "pizza" passando para ela as info da pizza requisitada
+        . Adequar a view "pizza" para exibir os dados da pizza
+
+Para fazer a busca funcionar:
+    ☐ Adequar o form do index.ejs setando o method para GET e o action para /search
+    ☐ Criar uma rota em PizzarRouter para receber uma requisição get para "/search"
+    ☐ Direcionar a requisição que chegue a essa rota para PizzasController.search
+    ☐ Criar o controller PizzasController.search
+        Esse controller deve
+        . Identificar a string que está sendo buscada
+        . Filtrar do array de pizzas as que contém no nome a string que está sendo buscada
+        . Renderizar a view index passando para ela um array com as pizzas selecionadas.
