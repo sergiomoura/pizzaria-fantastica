@@ -1,10 +1,21 @@
-<%- include('parts/head',{title:'Pizzaria Fantástica'}); %>
-	<h1><%= pizza.nome %></h1>
-	<h2><%= pizza.preco %></h2>
-	<img src="<%= pizza.img %>" alt="<%= pizza.nome %>">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Pizzaria Fantástica</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+	<link rel="stylesheet" href="/css/pizza.css">
+	<h1>Fracatu</h1>
+	<h2>R$ 60,00</h2>
+	<img src="/img/fracatu.jpg" alt="Fracatu">
 	<ul>
-		<% for(let ingrediente of pizza.ingredientes) { %>
-		<li><%= ingrediente %></li>
-		<% } %>
+		<li>Mussarela</li>
+		<li>Frango Desfiado</li>
+		<li>Requeijão</li>
 	</ul>
-	<%- include('parts/foot'); %>
+</body>
+</html>
