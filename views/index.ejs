@@ -1,16 +1,90 @@
-<%- include('parts/head',{title:'Pizzaria Fantástica'}); %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Pizzaria Fantástica</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
 	<form>
 		<input type="text" name="busca" placeholder="Qual pizza você procura?" autocomplete="off">
 		<button type="submit">Buscar</button>
 	</form>
 	<main>
-		<% for(let pizza of pizzas){ %>
 		<article>
-			<img src="<%= pizza.img %>" alt="<%= pizza.nome %>">
+			<img src="img/pepperoni.jpg" alt="Pepperoni">
 			<button>+ Add</button>
-			<div><%= pizza.nome %></div>
-			<span><%= pizza.preco.toLocaleString('pt-br', { minimumFractionDigits: 2 , style: 'currency', currency: 'BRL' }) %></span>
+			<div>Pepperoni</div>
+			<span>R$ 54,00</span>
 		</article>
-		<% } %>
+		<article>
+			<img src="img/pepperoni.jpg" alt="Pepperoni">
+			<button>+ Add</button>
+			<div>Pepperoni</div>
+			<span>R$ 54,00</span>
+		</article>
+		<article>
+			<img src="img/pepperoni.jpg" alt="Pepperoni">
+			<button>+ Add</button>
+			<div>Pepperoni</div>
+			<span>R$ 54,00</span>
+		</article>
+		<article>
+			<img src="img/pepperoni.jpg" alt="Pepperoni">
+			<button>+ Add</button>
+			<div>Pepperoni</div>
+			<span>R$ 54,00</span>
+		</article>
+		<article>
+			<img src="img/pepperoni.jpg" alt="Pepperoni">
+			<button>+ Add</button>
+			<div>Pepperoni</div>
+			<span>R$ 54,00</span>
+		</article>
+		<article>
+			<img src="img/pepperoni.jpg" alt="Pepperoni">
+			<button>+ Add</button>
+			<div>Pepperoni</div>
+			<span>R$ 54,00</span>
+		</article>
+		<article>
+			<img src="img/pepperoni.jpg" alt="Pepperoni">
+			<button>+ Add</button>
+			<div>Pepperoni</div>
+			<span>R$ 54,00</span>
+		</article>
+		<article>
+			<img src="img/pepperoni.jpg" alt="Pepperoni">
+			<button>+ Add</button>
+			<div>Pepperoni</div>
+			<span>R$ 54,00</span>
+		</article>
+		<article>
+			<img src="img/pepperoni.jpg" alt="Pepperoni">
+			<button>+ Add</button>
+			<div>Pepperoni</div>
+			<span>R$ 54,00</span>
+		</article>
+		<article>
+			<img src="img/pepperoni.jpg" alt="Pepperoni">
+			<button>+ Add</button>
+			<div>Pepperoni</div>
+			<span>R$ 54,00</span>
+		</article>
+		<article>
+			<img src="img/pepperoni.jpg" alt="Pepperoni">
+			<button>+ Add</button>
+			<div>Pepperoni</div>
+			<span>R$ 54,00</span>
+		</article>
+		<article>
+			<img src="img/pepperoni.jpg" alt="Pepperoni">
+			<button>+ Add</button>
+			<div>Pepperoni</div>
+			<span>R$ 54,00</span>
+		</article>
 	</main>
-	<%- include('parts/head',{title:'Pizzaria Fantástica'}); %>
+</body>
+</html>
