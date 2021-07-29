@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,90 +14,15 @@
 		<button type="submit">Buscar</button>
 	</form>
 	<main>
+		<% for(let pizza of pizzas) { %>
 		<article>
-			<img src="img/pepperoni.jpg" alt="Pepperoni">
-			<a href="/pizzas/4">Ver Mais</a>
+			<img src="<%= pizza.img %>" alt="<%= pizza.nome %>">
+			<a href="/pizzas/<%= pizza.id %>">Ver Mais</a>
 			<button>+ Add</button>
-			<div>Pepperoni</div>
-			<span>R$ 54,00</span>
+			<div><%= pizza.nome %></div>
+			<span><%= pizza.preco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}).replace('.',',') %></span>
 		</article>
-		<article>
-			<img src="img/pepperoni.jpg" alt="Pepperoni">
-			<a href="/pizzas/4">Ver Mais</a>
-			<button>+ Add</button>
-			<div>Pepperoni</div>
-			<span>R$ 54,00</span>
-		</article>
-		<article>
-			<img src="img/pepperoni.jpg" alt="Pepperoni">
-			<a href="/pizzas/4">Ver Mais</a>
-			<button>+ Add</button>
-			<div>Pepperoni</div>
-			<span>R$ 54,00</span>
-		</article>
-		<article>
-			<img src="img/pepperoni.jpg" alt="Pepperoni">
-			<a href="/pizzas/4">Ver Mais</a>
-			<button>+ Add</button>
-			<div>Pepperoni</div>
-			<span>R$ 54,00</span>
-		</article>
-		<article>
-			<img src="img/pepperoni.jpg" alt="Pepperoni">
-			<a href="/pizzas/4">Ver Mais</a>
-			<button>+ Add</button>
-			<div>Pepperoni</div>
-			<span>R$ 54,00</span>
-		</article>
-		<article>
-			<img src="img/pepperoni.jpg" alt="Pepperoni">
-			<a href="/pizzas/4">Ver Mais</a>
-			<button>+ Add</button>
-			<div>Pepperoni</div>
-			<span>R$ 54,00</span>
-		</article>
-		<article>
-			<img src="img/pepperoni.jpg" alt="Pepperoni">
-			<a href="/pizzas/4">Ver Mais</a>
-			<button>+ Add</button>
-			<div>Pepperoni</div>
-			<span>R$ 54,00</span>
-		</article>
-		<article>
-			<img src="img/pepperoni.jpg" alt="Pepperoni">
-			<a href="/pizzas/4">Ver Mais</a>
-			<button>+ Add</button>
-			<div>Pepperoni</div>
-			<span>R$ 54,00</span>
-		</article>
-		<article>
-			<img src="img/pepperoni.jpg" alt="Pepperoni">
-			<a href="/pizzas/4">Ver Mais</a>
-			<button>+ Add</button>
-			<div>Pepperoni</div>
-			<span>R$ 54,00</span>
-		</article>
-		<article>
-			<img src="img/pepperoni.jpg" alt="Pepperoni">
-			<a href="/pizzas/4">Ver Mais</a>
-			<button>+ Add</button>
-			<div>Pepperoni</div>
-			<span>R$ 54,00</span>
-		</article>
-		<article>
-			<img src="img/pepperoni.jpg" alt="Pepperoni">
-			<a href="/pizzas/4">Ver Mais</a>
-			<button>+ Add</button>
-			<div>Pepperoni</div>
-			<span>R$ 54,00</span>
-		</article>
-		<article>
-			<img src="img/pepperoni.jpg" alt="Pepperoni">
-			<a href="/pizzas/4">Ver Mais</a>
-			<button>+ Add</button>
-			<div>Pepperoni</div>
-			<span>R$ 54,00</span>
-		</article>
+		<% } %>
 	</main>
 </body>
 </html>
