@@ -9,14 +9,14 @@
 </head>
 <body>
 	<link rel="stylesheet" href="/css/pizza.css">
-	<main>
-		<h1>Fracatu</h1>
-		<h2>R$ 60,00</h2>
-		<img src="/img/fracatu.jpg" alt="Fracatu">
-		<div>Ingredientes: Mussarela, frango desfiado, requeijão</div>
+	<main>	
+		<h1><%= pizzas.nome %></h1>
+		<h2><%= pizzas.preco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}); %></h2>
+		<img src="<%= pizzas.img %>" alt="Fracatu">
+		<div><%= pizzas.ingredientes %></div>
 		<button>+ Add</button>
-		<a href="/pizzas/3" class="prev">&lt;</a>
-		<a href="/pizzas/5" class="next">&gt;</a>
+		<a href="/pizzas/<%= pizzas.id %>" class="prev">&lt;</a>
+		<a href="/pizzas/<%= pizzas.id %>" class="next">&gt;</a>
 	</main>
 </body>
 </html>
