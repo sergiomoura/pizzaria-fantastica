@@ -11,5 +11,19 @@ module.exports = {
 
 		// 2 - Renderizar a view pizza passando a pizza encontrada
 		res.render("pizza")
+	},
+	busca: (req, res) => {
+
+		// Guardar a string buscada em uma variável "busca"
+		const busca = req.query.busca;
+
+		// Representar em um array "encontradas" somente as pizzas
+		// que contenham a string buscada
+		const encontradas = pizzas.filter(
+			p => p.nome.toLowerCase().includes(busca.toLowerCase())
+		)
+
+		// Retornar uma view com as pizzas encontradas
+		res.render("index", {pizzas: encontradas});
 	}
 }
