@@ -33,6 +33,42 @@ Fazer um cadastro de Pizza:
     ✔ Criar o controller PizzasController.store @done(21-08-04 21:12)
         - Esse controller deve
         ✔ . Criar um objeto pizza com as informações que virão do form (req.body) @done(21-08-04 21:50)
-        . Adicionar essa pizza ao array de pizzas
-        . Salvar o array de pizzas dentro do arquivo Pizzas.json
-        
+        ✔ . Adicionar essa pizza ao array de pizzas @done(21-08-05 10:23)
+        ✔ . Salvar o array de pizzas dentro do arquivo Pizzas.json @done(21-08-05 10:23)
+
+Fazer com que a adição da pizza tenha o upload da foto funcionando:
+    ☐ Instalar o multer no projeto [https://www.npmjs.com/package/multer]
+    ☐ Instalar a biblioteca uniqid no projeto [https://www.npmjs.com/package/uniqid]
+    ☐ Alterar o form de envio da pizza para viabilizar o upload de imagem
+    ☐ * O formulário já tem um campo do tipo file, que permite o usuário a selecionar um arquivo para enviar *
+    ☐ No arquivo de rotas PizzasRouter importe o multer e o uniqid.
+    ☐ Crie uma constante chamdo storageDeFotoDePizza. Ela irá receber a saída da função multer.diskStorage()
+        . A função diskStorage recebe como parâmetro um objeto com duas funções: destination e filename.
+        . A função destination definirá o caminho onde salvaremos a foto
+        . A função filename definirá a regra que utilizaremos para nomear os arquivos quando eles chegarem ao servidor
+        . Atente para o caminho onde as imagens de pizza devem ser salvas. No caso, public/img
+        . Atente para a regra de nomear os arquivos que chegarão no servidor: uniqid() + '-' + file.originalname
+        . A função uniqid gera uma sequencia aleatória de caracteres. A regra acima impede que arquivos tenham o mesmo nome
+        . Veja os slides do tópico "Multer - Subindo arquivos" no Playground
+        . Mande seu código no slack em caso de dúvida!
+
+    ☐ Crie uma constante uploadDeFotoDePizza. Ela irá receber o resultado da função multer({storage: storageDeFotos})
+    ☐ Na rota post encarregada por direcionar a requisição para o PizzasController.store, acrescente o upload.single('img') como parâmetro entes do controller
+        router.post('/pizzas/create', uploadDeFotoDePizza.single('img'), PizzasController.store);
+    ☐ Em PizzasController.store, execute o comando console.log(req.file)
+        Verifique que agora a sua requisição possue um campo file (req.file)
+        contendo informações do arquivo que subiu. Você deve ver no seu console algo
+        parecido com isso...
+        {
+            fieldname: 'img',
+            originalname: 'nomeOriginalDaImagem.jpg',
+            encoding: '7bit',
+            mimetype: 'image/jpeg',
+            destination: 'public/img',
+            filename: '4jgm4ft26ckrz1sbxb-nomeOriginalDaImagem.jpg',
+            path: 'public\\img\\4jgm4ft26ckrz1sbxb-bahia.jpg',
+            size: 100921
+        }
+        Caso esteja vendo isso no seu console, 
+        O console.log já cumpriu com seu papel. Pode apagar ele!
+    ☐ Na criação do objeto pizza, subtitua a string que está atribuida para o campo img por "/img/" + req.file.filename
