@@ -32,7 +32,7 @@ Fazer um cadastro de Pizza:
     ✔ Criar a rota POST "/pizzas/create" direcionando a requisição para PizzasController.store @done(21-08-04 21:12)
     ✔ Criar o controller PizzasController.store @done(21-08-04 21:12)
         - Esse controller deve
-        . Criar um objeto pizza com as informações que virão do form (req.body)
+        ✔ . Criar um objeto pizza com as informações que virão do form (req.body) @done(21-08-04 21:50)
         . Adicionar essa pizza ao array de pizzas
         . Salvar o array de pizzas dentro do arquivo Pizzas.json
         

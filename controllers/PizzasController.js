@@ -1,4 +1,6 @@
 const pizzas = require('../database/Pizzas.json');
+const fs = require('fs');
+const path = require('path');
 
 module.exports = {
 	index: (req, res)=>{
@@ -40,6 +42,9 @@ module.exports = {
 		}
 
 		pizzas.push(pizza);
+
+		// Salvando array de pizzas no arquivo database/Pizzas.json
+		fs.writeFileSync(path.join(__dirname,"../database/Pizzas.json"), JSON.stringify(pizzas,null,1));
 
 		// Redireciona o usuário para a rota a raíz
 		res.redirect("/");
