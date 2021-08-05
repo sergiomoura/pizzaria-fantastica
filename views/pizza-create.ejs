@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Pizzaria Fantástica</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+	<link rel="stylesheet" href="/css/pizza-create.css">
+	<form method="POST" action="/pizzas/create">
+		<label>
+            Nome:
+            <input type="text" name="nome" id="nome">
+        </label>
+		<label>
+            Preço:
+            <input type="number" step="0.01" name="preco" id="preco">
+        </label>
+        
+		<label>
+            Ingredientes:
+            <input type="text" name="ingredientes" id="ingredientes">
+        </label>
+		<label class="file-container">
+            Clique para selecionar imagem
+            <input type="file" name="img" id="img">
+            <img id="imgPreview">
+        </label>
+        <div class="controles">
+            <button type="reset">Cancelar</button>
+            <button type="submit">Salvar</button>
+        </div>
+	</form>
+
+    <script type="text/javascript">
+
+        // Esse trecho de código foi baseado numa resposta do stackoverflow
+        // https://stackoverflow.com/questions/18457340/how-to-preview-selected-image-in-input-type-file-in-popup-using-jquery#answer-18457580
+
+        const previewImage = () => {
+
+            // Capturando o campo de arquivo
+            const fileField = document.querySelector("#img");
+            
+            // Capturando a imagem de previsualização
+            const imgPreview = document.querySelector("#imgPreview");
+
+            // Criando um file reader (https://developer.mozilla.org/en-US/docs/Web/API/FileReader)
+            var oFReader = new FileReader();
+
+            // Lendo o binário do arquivo
+            oFReader.readAsDataURL(fileField.files[0]);
+
+            // Exibindo imagem quando dados forem lidos
+            oFReader.onload = function (oFREvent) {
+                imgPreview.src = oFREvent.target.result;
+            };
+        };
+
+        document.querySelector("#img").addEventListener('change', previewImage);
+    
+    </script>
+</body>
+</html>

@@ -25,5 +25,24 @@ module.exports = {
 
 		// Retornar uma view com as pizzas encontradas
 		res.render("index", {pizzas: encontradas});
+	},
+	create: (req,res) => {
+		res.render("pizza-create");
+	},
+	store: (req, res) => {
+		let pizza = {
+			id:pizzas[pizzas.length - 1].id + 1 ,
+			nome: req.body.nome,
+			ingredientes: req.body.ingredientes.split(","),
+			preco: req.body.preco,
+			img:"/img/calabresa.jpg",
+			destaque:true
+		}
+
+		pizzas.push(pizza);
+
+		// Redireciona o usuário para a rota a raíz
+		res.redirect("/");
+
 	}
 }

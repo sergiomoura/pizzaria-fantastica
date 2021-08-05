@@ -5,9 +5,9 @@ Para fazer com que as pizzas da home apareçam de forma dinâmica:
 
 Para fazer o link "Ver Mais" funcionar:
     ✔ Fazer com que o link "ver mais" aponte para a rota /pizzas/_id_da_pizza_ @done(21-07-28 21:26)
-    ☐ Criar em PizzasRouter uma rota GET para "/pizzas/:id"
-    ☐ Direcionar a requisição que chegue a essa rota para PizzasController.show
-    ☐ Criar o controller PizzasController.show
+    ✔ Criar em PizzasRouter uma rota GET para "/pizzas/:id" @done(21-08-04 19:55)
+    ✔ Direcionar a requisição que chegue a essa rota para PizzasController.show @done(21-08-04 19:55)
+    ✔ Criar o controller PizzasController.show @done(21-08-04 19:55)
         Esse controller deve
         . Identificar o id da pizza requisitada
         . Carregar a informação da pizza requisitada
@@ -15,11 +15,24 @@ Para fazer o link "Ver Mais" funcionar:
         . Adequar a view "pizza" para exibir os dados da pizza
 
 Para fazer a busca funcionar:
-    ☐ Adequar o form do index.ejs setando o method para GET e o action para /search
-    ☐ Criar uma rota em PizzarRouter para receber uma requisição get para "/search"
-    ☐ Direcionar a requisição que chegue a essa rota para PizzasController.search
-    ☐ Criar o controller PizzasController.search
+    ✔ Adequar o form do index.ejs setando o method para GET e o action para /search @done(21-08-04 19:55)
+    ✔ Criar uma rota em PizzarRouter para receber uma requisição get para "/search" @done(21-08-04 19:55)
+    ✔ Direcionar a requisição que chegue a essa rota para PizzasController.search @done(21-08-04 19:55)
+    ✔ Criar o controller PizzasController.search @done(21-08-04 19:55)
         Esse controller deve
         . Identificar a string que está sendo buscada
         . Filtrar do array de pizzas as que contém no nome a string que está sendo buscada
         . Renderizar a view index passando para ela um array com as pizzas selecionadas.
+
+Fazer um cadastro de Pizza:
+    ✔ Criar uma rota GET para "/pizzas/create" @done(21-08-04 21:05)
+    ✔ Direcionar a req dessa rota para o controller PizzasController.create @done(21-08-04 21:05)
+    ✔ Devolver a view com um form para que o visitante digite infos @done(21-08-04 21:05)
+    ✔ Adequar o form da view pizza-create.ejs para enviar o form via post para a rota "/pizzas/create" @done(21-08-04 21:05)
+    ✔ Criar a rota POST "/pizzas/create" direcionando a requisição para PizzasController.store @done(21-08-04 21:12)
+    ✔ Criar o controller PizzasController.store @done(21-08-04 21:12)
+        - Esse controller deve
+        . Criar um objeto pizza com as informações que virão do form (req.body)
+        . Adicionar essa pizza ao array de pizzas
+        . Salvar o array de pizzas dentro do arquivo Pizzas.json
+        
