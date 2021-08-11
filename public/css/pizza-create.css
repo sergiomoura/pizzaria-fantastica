@@ -1,0 +1,72 @@
+html{
+    height: 100%;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+form {
+    width: 400px;
+    color: #FFF;
+    padding: 50px;
+    background-color: rgba(0,0,0,0.8);
+}
+
+form label {
+    display: block;
+    margin-bottom: 20px;
+    font-size: 0.8rem;
+    width: 100%;
+}
+
+form label input{
+    display: block;
+    font-size: 1.2rem;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    margin-top:5px
+}
+
+form label input:focus{
+    outline: 2px solid rgb(255, 81, 0);
+}
+
+form label.file-container{
+    background-color: gray;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+form label.file-container:hover{
+    opacity: 1;
+}
+
+form label.file-container input{
+    display: none;
+}
+
+form label.file-container img{
+    width:100%
+}
+
+form .controles{
+    display: flex;
+    justify-content: space-between;
+}
+form .controles button{
+    padding: 10px;
+    width: 120px;
+}
+
+form .controles button[type="reset"]{
+    background-color: gray;
+    opacity: 0.5;
+}

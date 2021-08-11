@@ -23,3 +23,15 @@ Para fazer a busca funcionar:
         . Identificar a string que está sendo buscada
         . Filtrar do array de pizzas as que contém no nome a string que está sendo buscada
         . Renderizar a view index passando para ela um array com as pizzas selecionadas.
+        Fazer um cadastro de Pizza:
+            ✔ Criar uma rota GET para "/pizzas/create" @done(21-08-04 19:59)
+            ✔ Direcionar a req dessa rota para o controller PizzasController.create @done(21-08-04 19:59)
+            ✔ Devolver a view "pizza-create" com um form para que o visitante digite infos @done(21-08-04 20:27)
+                      
+            ✔ Adequar o form da view pizza-create.ejs para enviar o form via post para "/pizzas/create" @done(21-08-04 20:31)
+            ✔ Criar a rota POST "/pizzas/create" direcionando a requisição para PizzasController.store @done(21-08-04 20:35)
+            ☐ Criar o controller PizzasController.store
+                    - Esse controller deve
+                    . Criar um objeto pizza com as informações que virão do form (req.body)
+                    . Adicionar essa pizza ao array de pizzas
+                    . Salvar o array de pizzas dentro do arquivo Pizzas.json

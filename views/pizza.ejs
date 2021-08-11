@@ -10,13 +10,17 @@
 <body>
 	<link rel="stylesheet" href="/css/pizza.css">
 	<main>	
-		<h1><%= pizzas.nome %></h1>
-		<h2><%= pizzas.preco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}); %></h2>
-		<img src="<%= pizzas.img %>" alt="Fracatu">
-		<div><%= pizzas.ingredientes %></div>
+		<h1><%= pizza.nome %></h1>
+		<h2><%= pizza.preco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}); %></h2>
+		<img src="<%= pizza.img %>" alt="Fracatu">
+		<div>Ingredientes:<%= pizza.ingredientes %></div>
 		<button>+ Add</button>
-		<a href="/pizzas/<%= pizzas.id %>" class="prev">&lt;</a>
-		<a href="/pizzas/<%= pizzas.id %>" class="next">&gt;</a>
+		<%if(voltar){ %>
+		<a href="/pizzas/<%= pizza.id %>" class="prev">&lt;</a>
+		<% } %>}
+		<%if(proximo){ %>
+		<a href="/pizzas/<%= pizza.id %>" class="next">&gt;</a>
+		<% } %>}
 	</main>
 </body>
 </html>
