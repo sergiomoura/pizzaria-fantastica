@@ -4,8 +4,9 @@ const multer = require('multer');
 
 
 const PizzasController = require('../controllers/PizzasController');
+const SalvaPizzasVisitadasMiddleware = require('../middlewares/SalvaPizzasVisitadasMiddleware')
 
-const storage = multer.diskStorage({
+const storageDePizza = multer.diskStorage({
     destination: (req, file,cb)=>{
         cb(null, './public/img')
     },
@@ -13,7 +14,8 @@ const storage = multer.diskStorage({
         cb(null, file.originalname)
     }
 })
-const uploadFile = multer({storage:storage})
+const uploadFile = multer({storage:storageDePizza})
+
 
 
 
@@ -21,7 +23,7 @@ const uploadFile = multer({storage:storage})
 router.get('/', PizzasController.index);
 router.get('/pizzas/create', PizzasController.create);
 router.post('/pizzas/create', uploadFile.single('img'), PizzasController.store);
-router.get('/pizzas/:id', PizzasController.show);
+router.get('/pizzas/:id', SalvaPizzasVisitadasMiddleware, PizzasController.show);
 router.get('/busca', PizzasController.busca);
 
 
