@@ -1,0 +1,27 @@
+[
+    {
+        "nome":"Leonardo",
+        "email":"leonardo@pizzariafantastica.com",
+        "senha":"tartaruga"
+    },
+    {
+        "nome":"Rafael",
+        "email":"rafael@pizzariafantastica.com",
+        "senha":"tartaruga"
+    },
+    {
+        "nome":"Michelangelo",
+        "email":"mike@pizzariafantastica.com",
+        "senha":"tartaruga"
+    },
+    {
+        "nome":"Donatelo",
+        "email":"donatelo@pizzariafantastica.com",
+        "senha":"tartaruga"
+    },
+    {
+        "nome":"Splinter",
+        "email":"splinter@pizzariafantastica.com",
+        "senha":"tartaruga"
+    }
+]

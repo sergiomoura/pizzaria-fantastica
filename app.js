@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var PizzasRouter = require('./routes/PizzasRouter');
+var AdminRouter = require('./routes/AdminRouter');
 const LogIpHoraMiddleware = require('./middlewares/LogIpHoraMiddleware');
 
 var app = express();
@@ -21,6 +22,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(LogIpHoraMiddleware);
 app.use('/', PizzasRouter);
+app.use('/', AdminRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

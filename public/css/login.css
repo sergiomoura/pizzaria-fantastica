@@ -1,0 +1,82 @@
+#form-login {
+	width: 480px;
+	margin: 5vh auto 0 auto;
+	background-color: rgba(0,0,0,0.5);
+	color: #FFF;
+	padding: 50px;
+}
+
+#form-login label {
+	display: block;
+	margin-bottom: 20px;
+	position: relative;
+}
+
+#form-login label input {
+	display: block;
+	padding: 5px;
+	border: none;
+	margin-top: 10px;
+	font-size: 1.5rem;
+	width: 100%;
+}
+
+#form-login label img{
+	width: 100%;
+	margin-top: 10px;
+	display: block;
+	cursor: pointer;
+}
+
+#form-login label input[type="file"]{
+	display: none;
+}
+
+#form-login label div{
+	width: 100%;
+	display: block;
+	font-size: 1rem;
+	background-color: rgba(0, 0, 0,0.5);
+	color: white;
+	border: none;
+	padding: 10px 20px;
+	position: absolute;
+	bottom: 0;
+	cursor: pointer;
+	text-align: center;
+}
+
+#form-login .controles{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#form-login .controles a{
+	font-size: 0.8rem;
+}
+
+#form-login .controles button{
+	display: block;
+	font-size: 1rem;
+	background-color: rgb(255, 81, 0);
+	color: white;
+	border: none;
+	padding: 10px 20px;
+	width: 50%;
+	opacity: 0.8;
+	cursor: pointer;
+}
+
+#form-login .controles button:hover{
+	opacity: 1;
+}
+
+.alert-error{
+	background-color: rgba(100,0,0,0.5);
+	color: #FFF;
+	width: 480px;
+	margin: 20px auto;
+	padding: 20px;
+	text-align: center;
+}

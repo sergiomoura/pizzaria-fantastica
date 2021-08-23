@@ -1,74 +1,105 @@
-Para fazer com que as pizzas da home apareçam de forma dinâmica:
-    ✔ No PizzasController você deve importar as info das pizzas (Pizzas.json); @done(21-07-28 21:23)
-    ✔ Enviar as informações das pizzas pizzas para a view index @done(21-07-28 21:24)
-    ✔ Adequar a view index.ejs para exibir as informações passadas pelo controller @done(21-07-28 21:24)
+Arquivos disponíveis para a prática
+view login.ejs
+view home.ejs
+css login.css
+css home.css
+json Usuarios.json
 
-Para fazer o link "Ver Mais" funcionar:
-    ✔ Fazer com que o link "ver mais" aponte para a rota /pizzas/_id_da_pizza_ @done(21-07-28 21:26)
-    ✔ Criar em PizzasRouter uma rota GET para "/pizzas/:id" @done(21-08-04 19:55)
-    ✔ Direcionar a requisição que chegue a essa rota para PizzasController.show @done(21-08-04 19:55)
-    ✔ Criar o controller PizzasController.show @done(21-08-04 19:55)
-        Esse controller deve
-        . Identificar o id da pizza requisitada
-        . Carregar a informação da pizza requisitada
-        . Renderizar a view "pizza" passando para ela as info da pizza requisitada
-        . Adequar a view "pizza" para exibir os dados da pizza
+Fazer área restrita - alunos:
+    ✔ 1 Crie um novo arquivo de rotas AdminRouter.js na pasta routes @done(21-08-18 20:28)
+    ✔ 2 Crie nele a rota GET '/admin/login' que direciona a requisição para AdminController.showLogin @done(21-08-18 20:28)
+    ✔ 3 Crie crie o arquivo AdminController.js na pasta controllers @done(21-08-18 20:29)
+    ✔ 4 Crie o controller showLogin. Ele deve retornar a view "admin/login" @done(21-08-18 20:32)
+    ✔ 5  * TESTE TUDO * @done(21-08-18 20:32)
+    ☐ 6 Faça com que o formulário de login presente na view login.ejs aponte para a rota POST "/admin/login"
+    ☐ 7 Crie uma rota post para "admin/login" que direcione a requisição para AdminController.login
+    ☐ 8 Faça com que o controller AdminController.login
+        - 9 Verifique se existe um usuário em Usuarios.json com o email fornecido retornando para a view admin/login com um erro caso não haja
+        - 10 Verifique se a senha do usuário cadastrado é a mesma fornecida retornando para a view admin/login com um erro caso não seja
+        - 11 Caso email e senha estejam correto, faça o controller retornar res.send("Você é o bichão mesmo!")
+    ☐ * 12 TESTE TUDO *
 
-Para fazer a busca funcionar:
-    ✔ Adequar o form do index.ejs setando o method para GET e o action para /search @done(21-08-04 19:55)
-    ✔ Criar uma rota em PizzarRouter para receber uma requisição get para "/search" @done(21-08-04 19:55)
-    ✔ Direcionar a requisição que chegue a essa rota para PizzasController.search @done(21-08-04 19:55)
-    ✔ Criar o controller PizzasController.search @done(21-08-04 19:55)
-        Esse controller deve
-        . Identificar a string que está sendo buscada
-        . Filtrar do array de pizzas as que contém no nome a string que está sendo buscada
-        . Renderizar a view index passando para ela um array com as pizzas selecionadas.
+Fazer área restrita - todos nós:
+    ☐ Fazer com que AdminController.login *crie uma session usuario contendo um objeto:
+       {email: "nomeDoUsuario@pizzariafantastica.com", nome: "Nome do Usuário da Silva"}
+    ☐ Direcionar o usuário para a rota admin/home (dica: use o res.redirect('/admin/home'))
+    ☐ Criar a rota GET "admin/home" no AdminRouter que direciona a req para o controller AdminController.showHome
+    ☐ Fazer com que AdminController.showHome renderize a view 'admin/home'
+    ☐ Criar middleware VerificaLogadoMiddleware
+    ☐ Esse middleware deve verificar se a session usuario está setada:
+        - Caso esteja, encaminhar a requisição adiante com o next()
+        - Caso não esteja, mandar uma mensagem desrespeitosa para o malfeitor que está tentando acessar uma área segura sem ter logado.
+    ☐ Proteja a rota get 'admin/home' com o middleware VerificaLogadoMiddleware
 
-Fazer um cadastro de Pizza:
-    ✔ Criar uma rota GET para "/pizzas/create" @done(21-08-04 21:05)
-    ✔ Direcionar a req dessa rota para o controller PizzasController.create @done(21-08-04 21:05)
-    ✔ Devolver a view com um form para que o visitante digite infos @done(21-08-04 21:05)
-    ✔ Adequar o form da view pizza-create.ejs para enviar o form via post para a rota "/pizzas/create" @done(21-08-04 21:05)
-    ✔ Criar a rota POST "/pizzas/create" direcionando a requisição para PizzasController.store @done(21-08-04 21:12)
-    ✔ Criar o controller PizzasController.store @done(21-08-04 21:12)
-        - Esse controller deve
-        ✔ . Criar um objeto pizza com as informações que virão do form (req.body) @done(21-08-04 21:50)
-        ✔ . Adicionar essa pizza ao array de pizzas @done(21-08-05 10:23)
-        ✔ . Salvar o array de pizzas dentro do arquivo Pizzas.json @done(21-08-05 10:23)
+Refatoração de código:
+    ☐ Mova as rotas '/pizzas/create' tanto a get quanto a post do PizzasRouter para o AdminRouter
+    ☐ Modifique-as para '/admin/pizzas/create'
+    ☐ Proteja essas rotas com o middleware VerificaLogadoMiddleware
 
-Fazer com que a adição da pizza tenha o upload da foto funcionando:
-    ☐ Instalar o multer no projeto [https://www.npmjs.com/package/multer]
-    ☐ Instalar a biblioteca uniqid no projeto [https://www.npmjs.com/package/uniqid]
-    ☐ Alterar o form de envio da pizza para viabilizar o upload de imagem
-    ☐ * O formulário já tem um campo do tipo file, que permite o usuário a selecionar um arquivo para enviar *
-    ☐ No arquivo de rotas PizzasRouter importe o multer e o uniqid.
-    ☐ Crie uma constante chamdo storageDeFotoDePizza. Ela irá receber a saída da função multer.diskStorage()
-        . A função diskStorage recebe como parâmetro um objeto com duas funções: destination e filename.
-        . A função destination definirá o caminho onde salvaremos a foto
-        . A função filename definirá a regra que utilizaremos para nomear os arquivos quando eles chegarem ao servidor
-        . Atente para o caminho onde as imagens de pizza devem ser salvas. No caso, public/img
-        . Atente para a regra de nomear os arquivos que chegarão no servidor: uniqid() + '-' + file.originalname
-        . A função uniqid gera uma sequencia aleatória de caracteres. A regra acima impede que arquivos tenham o mesmo nome
-        . Veja os slides do tópico "Multer - Subindo arquivos" no Playground
-        . Mande seu código no slack em caso de dúvida!
 
-    ☐ Crie uma constante uploadDeFotoDePizza. Ela irá receber o resultado da função multer({storage: storageDeFotos})
-    ☐ Na rota post encarregada por direcionar a requisição para o PizzasController.store, acrescente o upload.single('img') como parâmetro entes do controller
-        router.post('/pizzas/create', uploadDeFotoDePizza.single('img'), PizzasController.store);
-    ☐ Em PizzasController.store, execute o comando console.log(req.file)
-        Verifique que agora a sua requisição possue um campo file (req.file)
-        contendo informações do arquivo que subiu. Você deve ver no seu console algo
-        parecido com isso...
-        {
-            fieldname: 'img',
-            originalname: 'nomeOriginalDaImagem.jpg',
-            encoding: '7bit',
-            mimetype: 'image/jpeg',
-            destination: 'public/img',
-            filename: '4jgm4ft26ckrz1sbxb-nomeOriginalDaImagem.jpg',
-            path: 'public\\img\\4jgm4ft26ckrz1sbxb-bahia.jpg',
-            size: 100921
-        }
-        Caso esteja vendo isso no seu console, 
-        O console.log já cumpriu com seu papel. Pode apagar ele!
-    ☐ Na criação do objeto pizza, subtitua a string que está atribuida para o campo img por "/img/" + req.file.filename
+
+Archive:
+  ✔ No PizzasController você deve importar as info das pizzas (Pizzas.json); @done(21-07-28 21:23) @project(Para fazer com que as pizzas da home apareçam de forma dinâmica)
+  ✔ Enviar as informações das pizzas pizzas para a view index @done(21-07-28 21:24) @project(Para fazer com que as pizzas da home apareçam de forma dinâmica)
+  ✔ Adequar a view index.ejs para exibir as informações passadas pelo controller @done(21-07-28 21:24) @project(Para fazer com que as pizzas da home apareçam de forma dinâmica)
+  ✔ Fazer com que o link "ver mais" aponte para a rota /pizzas/_id_da_pizza_ @done(21-07-28 21:26) @project(Para fazer o link "Ver Mais" funcionar)
+  ✔ Criar em PizzasRouter uma rota GET para "/pizzas/:id" @done(21-08-04 19:55) @project(Para fazer o link "Ver Mais" funcionar)
+  ✔ Direcionar a requisição que chegue a essa rota para PizzasController.show @done(21-08-04 19:55) @project(Para fazer o link "Ver Mais" funcionar)
+  ✔ Criar o controller PizzasController.show @done(21-08-04 19:55) @project(Para fazer o link "Ver Mais" funcionar)
+    Esse controller deve
+    . Identificar o id da pizza requisitada
+    . Carregar a informação da pizza requisitada
+    . Renderizar a view "pizza" passando para ela as info da pizza requisitada
+    . Adequar a view "pizza" para exibir os dados da pizza
+  ✔ Adequar o form do index.ejs setando o method para GET e o action para /search @done(21-08-04 19:55) @project(Para fazer a busca funcionar)
+  ✔ Criar uma rota em PizzarRouter para receber uma requisição get para "/search" @done(21-08-04 19:55) @project(Para fazer a busca funcionar)
+  ✔ Direcionar a requisição que chegue a essa rota para PizzasController.search @done(21-08-04 19:55) @project(Para fazer a busca funcionar)
+  ✔ Criar o controller PizzasController.search @done(21-08-04 19:55) @project(Para fazer a busca funcionar)
+    Esse controller deve
+    . Identificar a string que está sendo buscada
+    . Filtrar do array de pizzas as que contém no nome a string que está sendo buscada
+    . Renderizar a view index passando para ela um array com as pizzas selecionadas.
+  ✔ Criar uma rota GET para "/pizzas/create" @done(21-08-04 21:05) @project(Fazer um cadastro de Pizza)
+  ✔ Direcionar a req dessa rota para o controller PizzasController.create @done(21-08-04 21:05) @project(Fazer um cadastro de Pizza)
+  ✔ Devolver a view com um form para que o visitante digite infos @done(21-08-04 21:05) @project(Fazer um cadastro de Pizza)
+  ✔ Adequar o form da view pizza-create.ejs para enviar o form via post para a rota "/pizzas/create" @done(21-08-04 21:05) @project(Fazer um cadastro de Pizza)
+  ✔ Criar a rota POST "/pizzas/create" direcionando a requisição para PizzasController.store @done(21-08-04 21:12) @project(Fazer um cadastro de Pizza)
+  ✔ Criar o controller PizzasController.store @done(21-08-04 21:12) @project(Fazer um cadastro de Pizza)
+    Esse controller deve
+  ✔ . Criar um objeto pizza com as informações que virão do form (req.body) @done(21-08-04 21:50) @project(Fazer um cadastro de Pizza)
+  ✔ . Adicionar essa pizza ao array de pizzas @done(21-08-05 10:23) @project(Fazer um cadastro de Pizza)
+  ✔ . Salvar o array de pizzas dentro do arquivo Pizzas.json @done(21-08-05 10:23) @project(Fazer um cadastro de Pizza)
+  ✔ Instalar o multer no projeto [https://www.npmjs.com/package/multer] @done(21-08-18 17:18) @project(Fazer com que a adição da pizza tenha o upload da foto funcionando)
+  ✔ Instalar a biblioteca uniqid no projeto [https://www.npmjs.com/package/uniqid] @done(21-08-18 17:18) @project(Fazer com que a adição da pizza tenha o upload da foto funcionando)
+  ✔ Alterar o form de envio da pizza para viabilizar o upload de imagem @done(21-08-18 17:18) @project(Fazer com que a adição da pizza tenha o upload da foto funcionando)
+  ✔ * O formulário já tem um campo do tipo file, que permite o usuário a selecionar um arquivo para enviar * @done(21-08-18 17:18) @project(Fazer com que a adição da pizza tenha o upload da foto funcionando)
+  ✔ No arquivo de rotas PizzasRouter importe o multer e o uniqid. @done(21-08-18 17:18) @project(Fazer com que a adição da pizza tenha o upload da foto funcionando)
+  ✔ Crie uma constante chamdo storageDeFotoDePizza. Ela irá receber a saída da função multer.diskStorage() @done(21-08-18 17:18) @project(Fazer com que a adição da pizza tenha o upload da foto funcionando)
+    . A função diskStorage recebe como parâmetro um objeto com duas funções: destination e filename.
+    . A função destination definirá o caminho onde salvaremos a foto
+    . A função filename definirá a regra que utilizaremos para nomear os arquivos quando eles chegarem ao servidor
+    . Atente para o caminho onde as imagens de pizza devem ser salvas. No caso, public/img
+    . Atente para a regra de nomear os arquivos que chegarão no servidor: uniqid() + '-' + file.originalname
+    . A função uniqid gera uma sequencia aleatória de caracteres. A regra acima impede que arquivos tenham o mesmo nome
+    . Veja os slides do tópico "Multer - Subindo arquivos" no Playground
+    . Mande seu código no slack em caso de dúvida!
+  ✔ Crie uma constante uploadDeFotoDePizza. Ela irá receber o resultado da função multer({storage: storageDeFotos}) @done(21-08-18 17:18) @project(Fazer com que a adição da pizza tenha o upload da foto funcionando)
+  ✔ Na rota post encarregada por direcionar a requisição para o PizzasController.store, acrescente o upload.single('img') como parâmetro entes do controller @done(21-08-18 17:18) @project(Fazer com que a adição da pizza tenha o upload da foto funcionando)
+    router.post('/pizzas/create', uploadDeFotoDePizza.single('img'), PizzasController.store);
+  ✔ Em PizzasController.store, execute o comando console.log(req.file) @done(21-08-18 17:18) @project(Fazer com que a adição da pizza tenha o upload da foto funcionando)
+    Verifique que agora a sua requisição possue um campo file (req.file)
+    contendo informações do arquivo que subiu. Você deve ver no seu console algo
+    parecido com isso...
+    {
+    fieldname: 'img',
+    originalname: 'nomeOriginalDaImagem.jpg',
+    encoding: '7bit',
+    mimetype: 'image/jpeg',
+    destination: 'public/img',
+    filename: '4jgm4ft26ckrz1sbxb-nomeOriginalDaImagem.jpg',
+    path: 'public\\img\\4jgm4ft26ckrz1sbxb-bahia.jpg',
+    size: 100921
+    }
+    Caso esteja vendo isso no seu console, 
+    O console.log já cumpriu com seu papel. Pode apagar ele!
+  ✔ Na criação do objeto pizza, subtitua a string que está atribuida para o campo img por "/img/" + req.file.filename @done(21-08-18 17:18) @project(Fazer com que a adição da pizza tenha o upload da foto funcionando)
